@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { cn } from "../lib/utils";
+// @ts-ignore
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// @ts-ignore
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const codeExamples: Record<string, string> = {
   search: `import { Client as Aspects, Model, OpenAI, Ollama } from "aspects.dev";
@@ -94,7 +98,7 @@ export default function CodeTabs() {
     <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-md overflow-hidden w-full max-w-3xl">
       <div className="flex justify-between items-center px-3 pt-2">
         {/* Tabs */}
-        <div className="flex space-x-1">
+        <div className="flex space-x-1 ">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -126,10 +130,23 @@ export default function CodeTabs() {
         </button>
       </div>
 
+      {/* Divider between tabs and code block */}
+      <div className="border-t border-gray-200 dark:border-zinc-700" />
+
       {/* Code block */}
-      <pre className="overflow-auto bg-black text-white p-4 text-sm font-mono rounded-b-lg">
-        <code>{code}</code>
-      </pre>
+      <div className="bg-zinc-900 text-white rounded-b-lg">
+        <SyntaxHighlighter
+          language="tsx"
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: "1rem",
+            backgroundColor: "transparent",
+          }}
+        >
+          {code}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 }
