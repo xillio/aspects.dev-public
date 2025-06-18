@@ -36,8 +36,8 @@ Whenever input or output is streamed over `stdin`/`stdout`, refer to the [Stream
 
 ### Common CLI Options
 
-- `--input`: Directory of the existing index (for `search`, `train`, and `host`)
-- `--output`: Output directory for a new index (used with `init`)
+- `--input`: Directory of the existing index (for `search`, `train`, and `host`).
+- `--output`: Output directory for a new index (used with `init`).
 - Additional options configure initialization parameters for the `init` function.
 
 ## SDKs
@@ -60,7 +60,7 @@ This will build an image containing both the CLI tool and the Node.js server.
 ## Streaming Structures
 
 Packed information is communicated to the CLI tool via `stdin`/`stdout`.
-This includes vectors, schemas, and commands. All data is **little-endian**.
+This includes vectors, schemas, and commands. All data types are **little-endian**.
 
 ### Vector Stream
 
@@ -145,7 +145,7 @@ Command Return Stream
 }
 ```
 
-### Search & Train Stream
+### Search & Train Streams
 
 Both search and train commands accept input vectors via stream.
 Search additionally requires `k` (number of neighbors).
@@ -205,8 +205,9 @@ Search Return Stream
 ```
 
 **Note:**
+
+A search command returns a vector stream for each input vector.
 Returned vectors from search only include:
 
 - `id`
-- 1 dimension representing the **distance** to the input vector
-  The full dimensions of the found vectors are not returned.
+- 1 dimension representing the **distance** to the input vector. The found vectors themselves are not returned.
