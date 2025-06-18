@@ -24,7 +24,7 @@ To show the CLI tool help dialogue:
 ```
 
 The CLI provides a set of functions to create or access an `aspects.dev` vector index.
-Whenever input or output is streamed over `stdin`/`stdout`, refer to the [Streaming section](#streaming-structures).
+Whenever input or output is streamed over `stdin`/`stdout`, refer to the Streaming Structures section below.
 
 ## CLI Options
 
@@ -54,6 +54,7 @@ docker compose up -d
 ```
 
 This will build an image containing both the CLI tool and the Node.js server.
+See the [API Reference](/api-reference) for available endpoints of the server.
 
 ---
 
