@@ -4,7 +4,7 @@ import { Database } from "lucide-react";
 
 export default function Header() {
   const location = useLocation();
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
