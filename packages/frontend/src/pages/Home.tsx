@@ -3,9 +3,9 @@ import CodeTabs from "../components/CodeTabs";
 
 export default function Home() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-6">
+    <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start justify-between gap-6">
       {/* Left: Text content */}
-      <div className="flex-1">
+      <div className="flex-1 pt-16">
         <h1 className="text-4xl md:text-5xl font-extrabold text-black dark:text-white mb-4">
           High-Performance Vector Database
         </h1>
