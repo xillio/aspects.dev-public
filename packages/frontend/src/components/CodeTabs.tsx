@@ -61,21 +61,22 @@ const schema = [
   }),
 
   // When given a document, the "content" property is read.
-  LangResolver.aspect("$.content", numDims)
+  // We'll use nomic-embed-text from Ollama, which uses 768 dimensions.
+  LangResolver.aspect("$.content", 768)
 ];
 
 // Initialize an index.
 await init({
   execFile,       // Location of aspects.cli.
   indexDirectory, // Directory must already exist.
-  idSize,
+  idSize,         // Maximum idSize for all vectors.
   schema,
   dataType: DataType.Float,
   distanceType: DistanceType.Cosine
 });`,
 };
 
-const tabs = ["search", "train", "initialize"];
+const tabs = Object.keys(codeExamples);
 
 export default function CodeTabs() {
   const [activeTab, setActiveTab] = useState("search");
