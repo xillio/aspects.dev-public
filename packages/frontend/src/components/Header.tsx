@@ -20,7 +20,7 @@ export default function Header() {
             className="flex items-center gap-2 font-semibold text-xl text-black dark:text-white"
           >
             <Database className="w-5 h-5" />
-            <span>Aspects</span>
+            <span>Aspects.dev</span>
           </Link>
 
           {/* Nav links */}

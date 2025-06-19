@@ -2,12 +2,6 @@
 
 ## Getting Started
 
-Check out all source code:
-
-```bash
-git clone https://github.com/xillio/aspects.dev.git && cd aspects.dev
-```
-
 The repository comes with a Makefile. Run `make` without a target to view all possible build targets.
 
 This Makefile can produce:
@@ -28,11 +22,11 @@ Whenever input or output is streamed over `stdin`/`stdout`, refer to the Streami
 
 ## CLI Options
 
-- `--search`: Open an existing index, input a vector stream through stdin and output a search return stream through stdout.
+- `--search`: Open an existing index, input a vector stream through `stdin` and output a search return stream through `stdout`.
   Use `--neighbours` or `-k` to set number of neighbors.
-- `--train`: Open an existing index and input a vector stream through stdin.
-- `--init`: Create a new index. Use `--schema` or `-s` to input a schema stream through stdin.
-- `--host`: Open an existing index and perform any command through stdin/stdout.
+- `--train`: Open an existing index and input a vector stream through `stdin`.
+- `--init`: Create a new index. Use `--schema` or `-s` to input a schema stream through `stdin`.
+- `--host`: Open an existing index and perform any command through `stdin`/`stdout`.
 
 ### Common CLI Options
 
@@ -66,7 +60,7 @@ This includes vectors, schemas, and commands. All data types are **little-endian
 ### Vector Stream
 
 Vectors are streamed together, with a single header for multiple vectors.
-Each vector includes an ID and a number of dimensions.
+Each vector is composed of an ID and a number of dimensions.
 The byte size of each component is defined by the header.
 
 ```text
@@ -97,7 +91,7 @@ Vector Stream
 ### Schema Stream
 
 Schemas are streamed individually.
-Each schema includes a number of aspects, each with a header and a blob of data.
+Each schema is composed of a number of aspects, each with a header and a blob of data.
 All headers are streamed first, followed by all blobs.
 
 ```text
@@ -117,7 +111,7 @@ Schema Stream
 }
 ```
 
-### Command Stream
+### Command Streams
 
 Used continuously when the CLI is in host mode.
 Each command includes an ID for response tracking.

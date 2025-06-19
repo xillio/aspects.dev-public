@@ -19,7 +19,7 @@ const embedder = new Ollama({ host: "http://localhost:11434", embedModel: "nomic
 const model = new Model({ schema, generator, embedder });
 
 // Perform a query.
-const vec = await model.analyze("Please retrieve all pdf documents from 2005 related to the topic.");
+const vec = await model.analyze("Please retrieve some blog posts about computers written by Whittaker.");
 const results = await aspects.search([vec], 25);`,
 
   train: `import { Client as Aspects, Model, Ollama } from "aspects.dev";
@@ -39,8 +39,8 @@ await aspects.train([document.id], [vec]);`,
   initialize: `import { init, MultiLangResolver, LangResolver, DataType, DistanceType } from "aspects.dev";
 
 const formats = [
-  "entertaining article",
-  "image description",
+  "technical article",
+  "blog post",
   ...
 ];
 
@@ -51,6 +51,7 @@ const lastNames = [
 ];
 
 // Define a schema.
+// A name and description is given to each aspect for generative AI extraction.
 const schema = [
   // When given a document, the "format" property is read.
   MultiLangResolver.aspect.radial("$.format", formats, {
