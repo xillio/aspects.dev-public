@@ -10,7 +10,7 @@ export default function Home() {
           High-Performance Vector Database
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
-          Aspects.dev is a specialized vector database for efficient metadata
+          aspects.dev is a specialized vector database for efficient metadata
           and text embedding storage.
         </p>
         <div className="flex gap-4">
