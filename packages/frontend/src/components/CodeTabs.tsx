@@ -51,8 +51,10 @@ const lastNames = [
 ];
 
 // Define a schema.
-// A name and description is given to each aspect for generative AI extraction.
 const schema = [
+  // We use generative AI for multi aspect extraction during search,
+  // to do this, supply a name and description.
+
   // When given a document, the "format" property is read.
   MultiLangResolver.aspect.radial("$.format", formats, {
       name: "format",
@@ -65,8 +67,10 @@ const schema = [
       description: "a string that describes the author of the document"
   }),
 
+  // For the content embedding we use a simple embedding model.
+  // We use nomic-embed-text from Ollama, which uses 768 dimensions.
+
   // When given a document, the "content" property is read.
-  // We'll use nomic-embed-text from Ollama, which uses 768 dimensions.
   LangResolver.aspect("$.content", 768)
 ];
 
