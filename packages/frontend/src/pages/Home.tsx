@@ -7,11 +7,11 @@ export default function Home() {
       {/* Left: Text content */}
       <div className="md:w-2/5 pt-16">
         <h1 className="text-4xl md:text-5xl font-extrabold text-black dark:text-white mb-4">
-          High-Performance Vector Database
+          High-Performance Vector Index
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
-          aspects.dev is a specialized vector database for efficient metadata
-          and text embedding storage.
+          aspects.dev is a specialized vector index for efficient metadata
+          and text embedding search.
         </p>
         <div className="flex gap-4">
           <Link
