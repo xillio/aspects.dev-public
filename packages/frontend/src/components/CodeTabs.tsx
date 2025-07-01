@@ -56,13 +56,13 @@ const schema = [
   // to do this, supply a name and description.
 
   // When given a document, the "format" property is read.
-  MultiLangResolver.aspect.radial("$.format", formats, {
+  MultiLangResolver.aspect.enum("$.format", formats, {
       name: "format",
       description: "a string that describes the format of the document"
   }),
 
   // When given a document, the "lastName" property is read.
-  MultiLangResolver.aspect.radial("$.lastName", lastNames, {
+  MultiLangResolver.aspect.enum("$.lastName", lastNames, {
       name: "author",
       description: "a string that describes the author of the document"
   }),
