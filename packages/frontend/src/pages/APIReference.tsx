@@ -7,7 +7,7 @@ const endpoints = [
   {
     method: 'GET',
     path: '/api/info',
-    description: 'Requests info about the index, returns { idSize, numDims, dataType, distanceType, schema }',
+    description: 'Requests info about the index',
   },
   {
     method: 'POST',
@@ -40,7 +40,7 @@ export default function APIReference() {
         <code className="bg-gray-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-sm">
           docker compose up -d
         </code>
-        .
+        . See the Streaming Structures section in the <a href="/docs">Documentation</a> for streaming vectors in the request body.
       </p>
 
       <div className="space-y-6">
