@@ -57,14 +57,20 @@ const schema = [
 
   // When given a document, the "format" property is read.
   MultiLangResolver.aspect.enum("$.format", formats, {
-      name: "format",
-      description: "a string that describes the format of the document"
+    name: "format",
+    description: "a string that describes the format of the document"
   }),
 
   // When given a document, the "lastName" property is read.
   MultiLangResolver.aspect.enum("$.lastName", lastNames, {
-      name: "author",
-      description: "a string that describes the author of the document"
+    name: "author",
+    description: "a string that describes the author of the document"
+  }),
+
+  // When given a document, the "createdAt" property is read.
+  MultiLangResolver.aspect.dateTime("$.createdAt", "years:2020-2025", {
+    name: "createdAt",
+    description: "a string that describes the date the document was created at"
   }),
 
   // For the content embedding we use a simple embedding model.
