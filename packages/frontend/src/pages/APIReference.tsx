@@ -210,7 +210,7 @@ function BodyBlock({ title, body }: { title: string; body: Body }) {
         </SyntaxHighlighter>
       ) : (
         /* Request → plain text, github-dark colours (matches docs) */
-        <pre className="hljs bg-gray-100 dark:bg-zinc-950 text-sm text-pink-500 p-4 rounded overflow-x-auto">
+        <pre className="hljs bg-gray-100 dark:bg-zinc-950 text-xs text-pink-500 p-4 rounded overflow-x-auto">
           {body.code}
         </pre>
       )}
