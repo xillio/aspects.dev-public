@@ -10,7 +10,7 @@ const codeExamples: Record<string, string> = {
   search: `import { Client as Aspects, Model, OpenAI, Ollama } from "aspects.dev";
 
 // Create aspects/client.
-const aspects = new Aspects({ baseUrl: "http://localhost:8000" });
+const aspects = new Aspects({ baseUrl: "http://localhost:8000", indexId: "example" });
 
 // Define a model.
 const { schema } = await aspects.info();
@@ -25,7 +25,7 @@ const results = await aspects.search([vec], 25);`,
   train: `import { Client as Aspects, Model, Ollama } from "aspects.dev";
 
 // Create aspects/client.
-const aspects = new Aspects({ baseUrl: "http://localhost:8000" });
+const aspects = new Aspects({ baseUrl: "http://localhost:8000", indexId: "example" });
 
 // Define a model.
 const { schema } = await aspects.info();
@@ -85,6 +85,8 @@ const schema = [
 ];
 
 // Initialize an index.
+// This will initialize a single index,
+// to run a server, make it point to its parent folder, in which multiple indices may live.
 await init({
   execFile,       // Location of aspects.cli.
   indexDirectory, // Directory must already exist.

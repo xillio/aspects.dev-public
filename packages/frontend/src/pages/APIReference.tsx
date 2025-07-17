@@ -21,8 +21,8 @@ type Endpoint = {
 const endpoints: Endpoint[] = [
   {
     method: "GET",
-    path: "/api/ping",
-    description: "Pings the server, returns the current timestamp",
+    path: "/api/ping/<index-id>",
+    description: "Pings the server & index, returns the current timestamp",
     response: {
       mimeType: "application/json",
       language: "typescript",
@@ -33,7 +33,7 @@ const endpoints: Endpoint[] = [
   },
   {
     method: "GET",
-    path: "/api/info",
+    path: "/api/info/<index-id>",
     description: "Requests info about the index",
     response: {
       mimeType: "application/json",
@@ -53,7 +53,7 @@ const endpoints: Endpoint[] = [
   },
   {
     method: "POST",
-    path: "/api/search",
+    path: "/api/search/<index-id>",
     description: "Searches the index for neighbouring vectors",
     request: {
       mimeType: "application/octet-stream",
@@ -77,7 +77,7 @@ const endpoints: Endpoint[] = [
   },
   {
     method: "POST",
-    path: "/api/train",
+    path: "/api/train/<index-id>",
     description: "Adds new vectors to the index",
     request: {
       mimeType: "application/octet-stream",
@@ -89,8 +89,8 @@ const endpoints: Endpoint[] = [
   },
   {
     method: "POST",
-    path: "/api/save",
-    description: "Saves the current index in RAM to disk",
+    path: "/api/save/<index-id>",
+    description: "Saves the index in RAM to disk",
     // no bodies → nothing will be shown
   },
 ];
