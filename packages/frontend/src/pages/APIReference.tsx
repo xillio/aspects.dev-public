@@ -20,6 +20,26 @@ type Endpoint = {
 
 const endpoints: Endpoint[] = [
   {
+    method: "POST",
+    path: "/api/init/<index-id>",
+    description: "Initializes a new index",
+    request: {
+      mimeType: "application/json",
+      language: "typescript",
+      code: `{
+  idSize: number;
+  numDims?: number;
+  dataType?: DataType;
+  distanceType?: DistanceType;
+  schema?: Array<{
+    type: number;
+    numDims: number;
+    blob: string;
+  }>;
+}`,
+    }
+  },
+  {
     method: "GET",
     path: "/api/ping/<index-id>",
     description: "Pings the server & index, returns the current timestamp",
